@@ -1,0 +1,28 @@
+name: A basic with 2 jobs
+
+on: push
+
+jobs:
+  Job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step-One
+        uses: actions/checkout@v4
+
+      - name: Step-Two
+        run: ls -l
+
+      - name: Step-Three
+        run: pwd
+
+  Job2:
+    name: Second job to run
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Step 2 of Job 2
+        run: pwd
